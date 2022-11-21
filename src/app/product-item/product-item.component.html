@@ -1,25 +1,26 @@
 <div class="card" style="width: 18rem;">
     <div class="card" style="width: 18rem;">
-        <img src="../assets/s.jpeg" class="card-img-top" alt="...">
+        <img src="{{product.url}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
         </div>
 
         <div class="card-body">
 <div class="row">       
     <div class="col">
-    <a href="#" class="btn btn-outline-warning btn-sm">Add to Cart</a></div>
+    <a (click)="onClick(product)" class="btn btn-outline-warning btn-sm">Add to Cart</a></div>
     <div class="col">
       
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-            <option selected>1</option>
-            <option value="1">2</option>
-            <option value="2">3</option>
-            <option value="3">4</option>
+    <select #qty (change)="onSelected(qty.value)" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
           </select>
           </div></div>
 
         </div>
       </div>
   </div>
+  
