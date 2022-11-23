@@ -30,8 +30,6 @@ export class ProductItemComponent implements OnInit{
   }
   onClick(productToCart:Product)
   {
-    console.log("DONE ADDED");
-
     const cartItem:CartItem = {
       product:this.product,
       qty:this.qty
