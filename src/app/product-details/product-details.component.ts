@@ -13,7 +13,8 @@ import { Product } from '../shared/product.model';
 export class ProductDetailsComponent implements OnInit {
   
   @Input () product! : Product 
-  qty:number=1;
+  qty:number=1; 
+  
   id?=0;
   constructor(private cartService:CartServiceService,
     private productService: ProductServiceService,private router:Router,  private route: ActivatedRoute,){
