@@ -1,12 +1,13 @@
 <div class="conatiner m-3 p-3">
 
-<div class="row g-3">
+  <div class="row g-3">
     <div class="col">
-        <app-cart-item></app-cart-item>
+      <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-cart-item>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    <div class=" col">
+      <h3>Total Price</h3>
+      <h5>{{totalPrice}}</h5>
+      <app-cart-checkout></app-cart-checkout>
     </div>
   </div>
-
 </div>

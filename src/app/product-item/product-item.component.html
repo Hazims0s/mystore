@@ -1,26 +1,28 @@
 <div class="card" style="width: 18rem;">
-    <div class="card" style="width: 18rem;">
-        <img src="{{product.url}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">{{product.description}}</p>
-        </div>
+  <div class="card" style="width: 18rem;">
+    <img src="{{product.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+    </div>
 
-        <div class="card-body">
-<div class="row">       
-    <div class="col">
-    <a (click)="onClick(product)" class="btn btn-outline-warning btn-sm">Add to Cart</a></div>
-    <div class="col">
-      
-    <select #qty (change)="onSelected(qty.value)" class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <a (click)="onClick(product)" class="btn btn-outline-warning btn-sm">Add to Cart</a></div>
+        <div class="col">
+
+          <select #qty (change)="onSelected(qty.value)" class="form-select form-select-sm"
+            aria-label=".form-select-sm example">
             <option value="1" selected>1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
+            <option value="5">5</option>
           </select>
-          </div></div>
-
         </div>
       </div>
+
+    </div>
   </div>
-  
+</div>
