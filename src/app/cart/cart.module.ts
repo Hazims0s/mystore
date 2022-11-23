@@ -5,6 +5,7 @@ import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartServiceService } from '../shared/cart-service.service';
 import { FormsModule } from '@angular/forms';
 import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
+import { CheckedoutComponent } from './checkedout/checkedout.component';
 
 
 
@@ -12,7 +13,8 @@ import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
   declarations: [
     CartComponent,
     CartItemComponent,
-    CartCheckoutComponent
+    CartCheckoutComponent,
+    CheckedoutComponent
   ],
   imports: [
     CommonModule,

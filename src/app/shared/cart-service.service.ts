@@ -12,7 +12,7 @@ export class CartServiceService {
     return JSON.parse( localStorage.getItem('cart') || '[]');
   }
 
-  addItem(product:CartItem)
+  addItem(product:CartItem):void
   {
     
     let cart = this.updateOrPush(product);
@@ -30,7 +30,7 @@ export class CartServiceService {
     return cart;
   }
   
-  totalPrice()
+  totalPrice():number
   {
     let price=0;
     this.getCart().forEach( item => {
@@ -38,7 +38,11 @@ export class CartServiceService {
     })
     return price;
   }
-  
+  clearCart():void
+  {
+    localStorage.setItem('cart','[]'); 
+  }
+
 
 }
 

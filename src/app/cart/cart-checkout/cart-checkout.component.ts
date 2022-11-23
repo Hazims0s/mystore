@@ -1,6 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart-checkout',
   templateUrl: './cart-checkout.component.html',
@@ -12,15 +12,14 @@ export class CartCheckoutComponent implements OnInit {
    creditCard='';
    regValid = new FormControl(this.creditCard, Validators.pattern('^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$'));
 
-   constructor() {
+   constructor(private router:Router) {
     
    }
   ngOnInit(): void {
   }  
  onSubmit():void{  
 
-    alert("Hola");
-   }
+   this.router.navigate(['success']);   }
 
 
 
