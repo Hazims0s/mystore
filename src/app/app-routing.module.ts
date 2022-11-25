@@ -9,7 +9,9 @@ const routes: Routes = [
   {path:'',component:ProductListComponent} , 
   {path:'cart',component:CartComponent},
   {path:'success',component:CheckedoutComponent},
-  {path:'productdetails/:id',component:ProductDetailsComponent}
+  {path:'productdetails/:id',component:ProductDetailsComponent},
+  {path:'**',redirectTo:'/'}
+
 
 ];
 
