@@ -1,21 +1,39 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="name" class="form-label">name</label>
-    <input type="text" class="form-control" required name="name" [(ngModel)]="name" placeholder="Hazim">
+    <input type="text" class="form-control" [minlength]="2" [maxlength]="40" required name="name" (ngModel)="name"
+    #name="ngModel" 
+    placeholder="Hazim">
   </div>
   <div class="mb-3">
     <label for="address" class="form-label">Address</label>
-    <input type="text" class="form-control" required [minlength]="10" name="address" [(ngModel)]="address"
+    <input type="text" class="form-control" required [minlength]="10" [maxlength]="60"      name="address" (ngModel)="address"
+    #address="ngModel"
       placeholder="Hazim">
   </div>
   <div class="mb-3">
     <label for="creditCard" class="form-label">Credit Card</label>
-    <input type="text" class="form-control" required [minlength]="16" inputmode="numeric" maxlength="16"
-    pattern="^(0|[1-9][0-9]*)$" 
-      name="creditCard" [(ngModel)]="creditCard"
-      placeholder="XXXX XXXX XXXX XXXX">
+    <input type="text" class="form-control"inputmode="numeric"
+    id="creditCard"
+                  pattern="^(0|[1-9][0-9]*)$"  [maxlength]="16" required [minlength]="16" (ngModelChange)="checkPattern($event)"        name="creditCard" (ngModel)="creditCard"    #creditCard="ngModel"   
+    placeholder="XXXX XXXX XXXX XXXX">
+
   </div>
   <div class="mb-3">
     <button type="submit" [disabled]="form.invalid" class="btn btn-info" >Checkout</button>
   </div>
-</form>
+</form>  
+<p  class="alert alert-danger" *ngIf="creditCard.invalid && creditCard.touched">
+     creditard must be 16 number 
+</p>
+
+<p  class="alert alert-danger" *ngIf="address.invalid && address.touched">
+  address must be longer than 10  and less than 60
+</p>
+
+<p  class="alert alert-danger" *ngIf="name.invalid && name.touched">
+  name must be longer than 2  and less than 40
+</p>
+
+
+ 

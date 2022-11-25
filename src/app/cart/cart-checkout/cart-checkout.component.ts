@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit ,Output ,EventEmitter} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
@@ -7,20 +7,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart-checkout.component.css']
 })
 export class CartCheckoutComponent implements OnInit {
-   name= '';
-   address= '';
-   creditCard='';
-   regValid = new FormControl(this.creditCard, Validators.pattern('^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$'));
 
-   constructor(private router:Router) {
-    
-   }
+   name = '';
+  address = '';
+  creditCard = '';
+   reg = new RegExp('[A-Za-z]');
+  constructor(private router: Router) {
+
+  }
   ngOnInit(): void {
-  }  
- onSubmit():void{  
+  }
+  onSubmit(): void {
 
-   this.router.navigate(['success']);   }
+    this.router.navigate(['success']);
+  }
+  
+  checkPattern(value:string) {
+     if(value.match(this.reg))
+      alert('invalid input Numbers only ');
+    }
+ 
+  }
 
 
-
-}

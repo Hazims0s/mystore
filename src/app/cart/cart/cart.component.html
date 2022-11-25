@@ -2,7 +2,7 @@
 
   <div class="row g-3">
     <div class="col">
-      <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-cart-item>
+      <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem" (deleteItem)="deletedItem($event)" ></app-cart-item>
     </div>
     <div class=" col">
       <h3>Total Price</h3>

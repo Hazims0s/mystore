@@ -1,6 +1,10 @@
 # Mystore
+simple store applications containes the following 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+- ##### homepage is main page with allproducts componoet which you can see also in '/allproducts' 
+- ##### product page details which can be found at '127.0.0.1/productdetails/:id' which is productdetails component
+- ##### cart page which is in dffrent module is Cart module you can visit at '127.0.0.1/cart' 
+- ##### after comletion of payment will redirect you to '127.0.0.1/cart/success' 
 
 ## Install  npm
 

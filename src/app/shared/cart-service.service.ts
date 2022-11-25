@@ -42,7 +42,10 @@ export class CartServiceService {
   {
     localStorage.setItem('cart','[]'); 
   }
-
+  deletItem(id : number):void
+  {
+    localStorage.setItem('cart',JSON.stringify(this.getCart().filter(c=> c.product.id !==id) )); 
+  }
 
 }
 
